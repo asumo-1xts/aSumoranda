@@ -27,8 +27,8 @@ body {
 
   /* 背景全体に適用 */
   background-image:
-    linear-gradient(#5a5a5a2a 1px, transparent 1px),
-    /* 横線 */ linear-gradient(90deg, #5a5a5a2a 1px, transparent 1px); /* 縦線 */
+    linear-gradient(#5a5a5a2a 1px, transparent 1px), /* 横線 */
+    linear-gradient(90deg, #5a5a5a2a 1px, transparent 1px); /* 縦線 */
 
   /* マスのサイズを指定 */
   background-size: 128px 128px;
