@@ -1,0 +1,37 @@
+/* 参考: https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css */
+
+.dark {
+  --vp-c-miku-1: #a8d9d5;
+  --vp-c-miku-2: #68b3af;
+  --vp-c-miku-3: #039393;
+  --vp-c-miku-soft: #242424;
+
+  --vp-c-brand-1: var(--vp-c-miku-1);
+  --vp-c-brand-2: var(--vp-c-miku-2);
+  --vp-c-brand-3: var(--vp-c-miku-3);
+  --vp-c-brand-soft: var(--vp-c-miku-soft);
+
+  --vp-c-bg: #141414;
+  --vp-c-bg-alt: #0c0c0c;
+  --vp-c-bg-elv: #0c0c0c;
+  --vp-c-bg-soft: #0c0c0c;
+
+  --vp-c-divider: #5a5a5a;
+  --vp-c-border: #5a5a5a;
+  --vp-c-gutter: #5a5a5a;
+
+  --vp-c-gray-soft: #212426;
+  --vp-c-indigo-soft: #21223a;
+  --vp-c-purple-soft: #2b2537;
+  --vp-c-green-soft: #142f26;
+  --vp-c-yellow-soft: #372e12;
+  --vp-c-red-soft: #381b20;
+}
+
+::selection {
+  background-color: #f7a1a339;
+}
+
+.vitepress-linkcards-container:hover {
+  border-color: var(--vp-c-brand-1) !important;
+}

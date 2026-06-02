@@ -1,0 +1,42 @@
+\documentclass[uplatex, twocolumn]{jlreq} % jsarticleでも可
+
+\usepackage[
+  backend = biber,
+  style = numeric-comp
+]{biblatex} % BibLaTeXパッケージ読み込み
+
+\addbibresource{ref.bib} % bibファイルを登録
+
+\ExecuteBibliographyOptions{ % 追加オプション（他にも色々）
+  sorting = none, % 引用した順に並べる
+  maxnames = 2, % 連名になっている著者の数がmaxnamesを超えると、
+  minnames = 1 % 初めのminnames人だけ表記されて残りは省略される
+}
+
+% ここまでは常套手段、検索結果も多数
+% ===============================================================================
+% ここから奥の手
+
+\usepackage[british, english]{babel}
+% babelパッケージにjapaneseは無いらしい
+% 以下のDefineBiblio~コマンドを使いたいけれど言語設定が必要なので、
+% 便宜的にjapaneseの代わりにbritishを割り当てておく
+\DefineBibliographyStrings{british}{andothers={他}} % 和文の文献なら「他」
+\DefineBibliographyStrings{english}{andothers={\textit{et al.}}} % 斜体にする
+
+\AtEveryBibitem{ % bibファイルの文献を走査してゆく
+  \iffieldequalstr{langid}{Japanese}{ % if: langid=Japaneseとした文献のみ取得
+    \selectlanguage{british} % 言語をbritishに設定
+    \DeclareDelimFormat{finalnamedelim}{ % 連名の最後に「and」を使わせない
+      \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}
+    \addspace\multinamedelim }
+    \DeclareFieldFormat{title}{\textrm{「#1」}} % 論文タイトルを鍵括弧
+    \DeclareFieldFormat[book]{title}{\textrm{『#1』}} % 書籍タイトルを二重鍵括弧
+    \DeclareFieldFormat{journaltitle}{\textrm{#1}} % 雑誌タイトルを斜体解除
+    \DeclareFieldFormat{booktitle}{\textrm{#1}} % 書籍タイトルを斜体解除
+    \renewbibmacro{in:}{} % ジャーナル名の前の「In:」を除去
+  }{% ここまでが和文の文献に限った処理
+  \selectlanguage{english}} % else: 欧文の文献はデフォルト（english）の処理で良い
+}
+
+% 奥の手ここまで（プリアンブル終了）

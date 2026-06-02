@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'myMainFont';
+  font-display: swap;
+  src: url('./fonts/GenInterfaceJP-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'mySubFont';
+  font-display: swap;
+  src: url('./fonts/ZenKakuGothicNew-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'myCodeFont';
+  font-display: swap;
+  src: url('./fonts/MoralerspaceNeonHW-Regular.woff2') format('woff2');
+}
+
+html {
+  /* 標準(16px)の90%〜95%くらいが「ほんの少し」に最適です */
+  font-size: 90%;
+}
+
+body {
+  font-family: 'myMainFont', sans-serif;
+  font-size: 1rem;
+
+  /* 背景全体に適用 */
+  background-image:
+    linear-gradient(#5a5a5a2a 1px, transparent 1px),
+    /* 横線 */ linear-gradient(90deg, #5a5a5a2a 1px, transparent 1px); /* 縦線 */
+
+  /* マスのサイズを指定 */
+  background-size: 128px 128px;
+
+  /* 背景色（紙の色） */
+  background-color: var(--vp-c-bg);
+}
+
+h2 {
+  font-family: 'mySubFont', serif;
+}
+
+code {
+  font-family: 'myCodeFont', monospace;
+}

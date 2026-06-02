@@ -1,0 +1,57 @@
+.VPBadge {
+  display: inline-block;
+  margin-left: 4px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 0 10px;
+  font-size: small;
+  font-family: 'myCodeFont', monospace;
+  white-space: nowrap;
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.VPBadge.small {
+  padding: 0 6px;
+  line-height: 18px;
+  font-size: 10px;
+  transform: translateY(-8px);
+}
+
+.VPDocFooter .VPBadge {
+  display: none;
+}
+
+.vp-doc h1 > .VPBadge,
+.vp-doc h2 > .VPBadge {
+  margin: 0 0 0 2px;
+  vertical-align: middle;
+}
+
+.vp-doc h2 > .VPBadge {
+  padding: 0 8px;
+}
+
+.vp-doc h3 > .VPBadge {
+  vertical-align: middle;
+}
+
+.vp-doc h4 > .VPBadge,
+.vp-doc h5 > .VPBadge,
+.vp-doc h6 > .VPBadge {
+  vertical-align: middle;
+  line-height: 18px;
+}
+
+.VPBadge.tag {
+  color: var(--vp-c-brand-1);
+  border-color: var(--vp-c-brand-1);
+  background-color: transparent;
+  transition: all 0.25s;
+}
+
+.VPBadge.tag:hover {
+  color: var(--vp-c-brand-2);
+  border-color: var(--vp-c-brand-2);
+  background-color: transparent;
+}

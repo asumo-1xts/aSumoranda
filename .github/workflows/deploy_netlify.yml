@@ -1,0 +1,48 @@
+name: Deploy to Netlify
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'package.json'
+
+permissions:
+  contents: write
+  deployments: write
+  statuses: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+
+      - name: Install dependencies and build
+        run: |
+          yarn install
+          yarn docs:build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v3.0.0
+        with:
+          publish-dir: 'docs/.vitepress/dist'
+          production-branch: main
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          deploy-message: ${{ github.event.head_commit.message || 'workflow_dispatch' }}
+          fails-without-credentials: true
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_PROJECT_ID }}

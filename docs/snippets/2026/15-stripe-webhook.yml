@@ -1,0 +1,43 @@
+name: stripe-webhook
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [stripe_payment_success]
+
+permissions:
+  contents: write
+
+jobs:
+  update-stock-and-send-email:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main branch
+        uses: actions/checkout@v5
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Update md files
+        env:
+          PAYLOAD_ITEMS: ${{ toJson(github.event.client_payload.items) }}
+        run: |
+          echo "Items purchased: $PAYLOAD_ITEMS"
+          python3 script/update_stock.py
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v7.0.0
+        with:
+          branch: main
+          commit_message: 'docs: Update stock'
+          commit_user_name: 'gh-actions[bot]'
+          commit_user_email: 'action@github.com'
+          commit_author: 'gh-actions[bot] <action@github.com>'
+
+      - name: Send email to customer
+        env:
+          PAYLOAD_EMAIL: ${{ github.event.client_payload.email }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+        run: |
+          echo "Send email to customer..."
+          python3 script/send_email.py
