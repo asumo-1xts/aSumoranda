@@ -118,7 +118,7 @@ export default defineConfigWithTheme({
 
     editLink: {
       pattern:
-        'https://github.com/asumo-1xts/asumo-1xts.github.io/blob/main/docs/:path',
+        'https://github.com/asumo-1xts/aSumoranda/blob/main/docs/:path',
       text: 'GitHubで修正を提案'
     },
 
