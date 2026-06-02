@@ -53,7 +53,11 @@ const features = posts
 </script>
 
 ::: info
-急いでお伝えしたいことは特にありません。
+ドメインを移行しました。
+
+[asumoranda.com](https://asumoranda.com/) → [blog.asumo.dev](https://blog.asumo.dev/)
+
+しばらくの間は旧URLからでもアクセスできます。
 :::
 
 ---
