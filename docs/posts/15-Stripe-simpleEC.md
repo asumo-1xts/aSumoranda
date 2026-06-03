@@ -5,7 +5,7 @@ emoji: 🦓
 title: Stripeで簡易なECサイトを実装
 
 date: 2026-03-22
-permalink: 'https://blog.asumo.dev/posts/15-Stripe-webhook.html'
+permalink: 'https://blog.asumo.dev/posts/15-Stripe-simpleEC.html'
 
 prev: false
 next: false
