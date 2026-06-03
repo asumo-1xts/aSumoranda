@@ -156,8 +156,7 @@ MPLAB X IPEを立ち上げてGUIで書き込んでも良いのですが、この
 
 さて、上手くいけば次のようにして書き込みが完了します。failedになった場合は、一度PICKIT3を繋ぎなおすと治ることがあります。
 
-```powershell
-PS C:\Users\asumo\MPLABProjects\Lchica_PIC12F675> .\write_hex.ps1
+```
 DFP Version Used : PIC10-12Fxxx_DFP,1.8.184,Microchip
 *****************************************************
 Connecting to MPLAB PICkit 3...
