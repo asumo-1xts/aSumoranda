@@ -1,5 +1,5 @@
 /**
- * @file        heartLand_mother.ino
+ * @file        heartLand_mother.cpp
  * @author      aSumo (1xtelescope@gmail.com)
  * @brief       a sketch for ProMicro in USB-MIDI Controller "HeartLand"
  * @version     1.0
@@ -28,35 +28,62 @@ uint8_t maxPWM = 255;       //!< LED最明値
 uint8_t LEDpin[2] = {3, 5};  //!< indicator
 
 CCButton sw[] = {
-    {10, {1, Channel::createChannel(ch[1])}}, // Solo01
-    {14, {2, Channel::createChannel(ch[1])}}, // Solo02
-    {15, {1, Channel::createChannel(ch[2])}}, // Solo03
-    {16, {2, Channel::createChannel(ch[2])}}, // Solo04
+    {10, {1, Channel::createChannel(ch[1])}},  // Solo01
+    {14, {2, Channel::createChannel(ch[1])}},  // Solo02
+    {15, {1, Channel::createChannel(ch[2])}},  // Solo03
+    {16, {2, Channel::createChannel(ch[2])}},  // Solo04
 };
 
 CCPotentiometer fader[] = {
-    {A0, {3, Channel::createChannel(ch[1])}}, // Vol01
-    {A1, {4, Channel::createChannel(ch[1])}}, // Vol02
-    {A2, {3, Channel::createChannel(ch[2])}}, // Vol03
-    {A3, {4, Channel::createChannel(ch[2])}}, // Vol04
+    {A0, {3, Channel::createChannel(ch[1])}},  // Vol01
+    {A1, {4, Channel::createChannel(ch[1])}},  // Vol02
+    {A2, {3, Channel::createChannel(ch[2])}},  // Vol03
+    {A3, {4, Channel::createChannel(ch[2])}},  // Vol04
 };
 
 CCPotentiometer pot[] = {
-    {A8, {1, Channel::createChannel(ch[0])}}, // A x B
-    {A9, {2, Channel::createChannel(ch[0])}}, // Master
-    {A6, {5, Channel::createChannel(ch[1])}}, // FX_A
-    {A7, {5, Channel::createChannel(ch[2])}}, // FX_B
+    {A8, {1, Channel::createChannel(ch[0])}},  // A x B
+    {A9, {2, Channel::createChannel(ch[0])}},  // Master
+    {A6, {5, Channel::createChannel(ch[1])}},  // FX_A
+    {A7, {5, Channel::createChannel(ch[2])}},  // FX_B
 };
+
+// The maximum value that can be measured (usually 16383 = 2¹⁴-1)
+constexpr analog_t maxRawValue = 16383;
+// The filtered value read when potentiometer is at the 0% position
+constexpr analog_t minimumValue = maxRawValue / 64;
+// The filtered value read when potentiometer is at the 100% position
+constexpr analog_t maximumValue = maxRawValue - maxRawValue / 64;
+
+/**
+ * @brief   可変抵抗をLive上で正しく線形にマッピングする関数
+ * @param   raw 可変抵抗から読み取った値
+ */
+analog_t map2lin(analog_t raw) {
+  raw = constrain(raw, minimumValue, maximumValue);
+  float x = (float)(raw - minimumValue) / (maximumValue - minimumValue);
+  float x_calibrated;
+  float p = 0.5f;  // 大きくすると終端が急峻になる
+
+  if (x < 0.6f) {
+    // 前半: 0からの立ち上がりを鋭く
+    x_calibrated = 0.5f * powf(2.0f * x, p);
+  } else {
+    // 後半: 1.0への到達を鋭く
+    x_calibrated = 1.0f - 0.5f * powf(2.0f * (1.0f - x), p);
+  }
+
+  return (analog_t)(x_calibrated * maxRawValue);
+}
 
 /**
  * @brief   可変抵抗をLive上で対数的にマッピングする関数
- * @details Ableton Liveの各トラックの縦フェーダーに適用
  * @param   raw 可変抵抗から読み取った値
  */
 analog_t map2log(analog_t raw) {
   raw = constrain(raw, minimumValue, maximumValue);
   float x = (float)(raw - minimumValue) / (maximumValue - minimumValue);
-  float p = 1.5f; // y=x^pのp。大きくすると終端が急峻になる
+  float p = 1.5f;  // y=x^pのp。大きくすると終端が急峻になる
 
   float x_calibrated = powf(x, p);
 
@@ -79,17 +106,17 @@ bool realTimeMessageCallback(RealTimeMessage rt) {
     startTime = micros();
     analogWrite(LEDpin[0], minPWM);
   }
-  ppqn++; // カウントアップ
+  ppqn++;  // カウントアップ
 
   if (ppqn > 24) {  // 24回＝1拍
     preBPM = 6.0e+07 / float(micros() - startTime);
 
     if (20 <= preBPM && preBPM <= 999) {
       BPM = preBPM;
-    } // preBPMが有効な数字であるならば、BPMとして採用
+    }  // preBPMが有効な数字であるならば、BPMとして採用
 
     analogWrite(LEDpin[0], maxPWM);
-    ppqn = 0; // カウントリセット
+    ppqn = 0;  // カウントリセット
   }
 
   return true;
@@ -98,7 +125,12 @@ bool realTimeMessageCallback(RealTimeMessage rt) {
 //! @brief setup関数
 void setup() {
   for (auto &p : fader) {
+    p.map(map2lin);
     p.map(map2log);
+  }
+
+  for (auto &p : pot) {
+    p.map(map2lin);
   }
 
   Control_Surface | pipes | midi_usb;
