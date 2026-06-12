@@ -3,7 +3,7 @@ layout: doc
 
 title: About
 
-permalink: 'https://blog.asumo.dev/about.html'
+permalink: "https://blog.asumo.dev/about.html"
 
 prev: false
 next: false
@@ -30,26 +30,7 @@ lastUpdated: false
 
 ## ｱｽﾓ（管理人）
 
-浜松市で会社員をやっています。
-
-| SNS等                                   | `ID`                             |
-| --------------------------------------- | -------------------------------- |
-| Email                                   | `1xtelescope@gmail.com`          |
-| Discord                                 | `@asumo_1xts` お気軽にどうぞ     |
-| [X](https://x.com/asumo_1xts)           | `@asumo_1xts` DMは気付かないかも |
-| [GitHub](https://github.com/asumo-1xts) | `@asumo-1xts` ハイフンにご注意！ |
-
-::: details さらなる自己開示
-
-<ImageGroup
-  :sources="[
-    '/images/9koma_music.webp',
-    '/images/9koma_student.webp'
-  ]"
-  type="double"
-/>
-
-:::
+工事中: https://asumo.dev/
 
 ## 1x telescope（ﾄｳﾊﾞｲﾃﾚｽｺｰﾌﾟ）
 
