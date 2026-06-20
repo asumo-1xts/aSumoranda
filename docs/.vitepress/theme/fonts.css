@@ -31,7 +31,7 @@ body {
     linear-gradient(90deg, #5a5a5a2a 1px, transparent 1px); /* 縦線 */
 
   /* マスのサイズを指定 */
-  background-size: 128px 128px;
+  background-size: 100px 100px;
 
   /* 背景色（紙の色） */
   background-color: var(--vp-c-bg);
