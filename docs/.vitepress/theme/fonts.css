@@ -17,23 +17,17 @@
 }
 
 html {
-  /* 標準(16px)の90%〜95%くらいが「ほんの少し」に最適です */
   font-size: 90%;
 }
 
 body {
   font-family: 'myMainFont', sans-serif;
   font-size: 1rem;
-
   /* 背景全体に適用 */
   background-image:
-    linear-gradient(#5a5a5a2a 1px, transparent 1px), /* 横線 */
-    linear-gradient(90deg, #5a5a5a2a 1px, transparent 1px); /* 縦線 */
-
-  /* マスのサイズを指定 */
-  background-size: 100px 100px;
-
-  /* 背景色（紙の色） */
+    linear-gradient(#5a5a5a2a 1px, transparent 1px),
+    /* 横線 */ linear-gradient(90deg, #5a5a5a2a 1px, transparent 1px); /* 縦線 */
+  background-size: 100px 100px; /* マスのサイズ */
   background-color: var(--vp-c-bg);
 }
 
