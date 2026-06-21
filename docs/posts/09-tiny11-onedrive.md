@@ -5,14 +5,14 @@ emoji: ☁️
 title: tiny11build後のOneDrive導入
 
 date: 2025-10-24
-permalink: 'https://blog.asumo.dev/posts/09-tiny11-onedrive.html'
+permalink: "https://blog.asumo.dev/posts/09-tiny11-onedrive.html"
 
 prev: false
 next: false
 
 tags:
-  - post2025
-  - trouble
+    - post2025
+    - trouble
 
 hidden: true
 ---
@@ -23,7 +23,7 @@ hidden: true
 
 ## はじめに
 
-[tiny11builder](https://github.com/ntdevlabs/tiny11builder 'tiny11builder')を使ってシンプルなWindows11を手に入れたまでは良かったのですが、OneDriveはやっぱり欲しいな…と思って自分でインストールしたところ同期が始まらず、どうもインターネットと接続される気配がありません。wingetから入れてもインストーラから入れてもダメでした。
+[tiny11builder](https://github.com/ntdevlabs/tiny11builder "tiny11builder")を使ってシンプルなWindows11を手に入れたまでは良かったのですが、OneDriveはやっぱり欲しいな…と思って自分でインストールしたところ同期が始まらず、どうもインターネットと接続される気配がありません。wingetから入れてもインストーラから入れてもダメでした。
 
 ## 環境
 
@@ -32,7 +32,7 @@ hidden: true
 
 ## 解決
 
-リポジトリを見に行ったら同じ状況の人が[issueを立てていて](https://github.com/ntdevlabs/tiny11builder/issues/467 'reinstall onedrive #467')、コントリビュータの方が解決策を提示してくれていました。
+リポジトリを見に行ったら同じ状況の人が[Issueを立てていて](https://github.com/ntdevlabs/tiny11builder/issues/467 "reinstall onedrive #467")、コントリビュータの方が解決策を提示してくれていました。
 
 > インストールしたあと、忘れずに再び有効化してください：
 >
