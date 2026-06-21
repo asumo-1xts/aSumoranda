@@ -23,7 +23,7 @@ lastUpdated: false
 
 <TaggedPostList tag="post2026" />
 
----
+## ~ 2025年
 
 ::: details 2025年 (<span class="text-base"><PostCounter tag="post2025" /></span>)
 

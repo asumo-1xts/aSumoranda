@@ -4,10 +4,10 @@ yarn = "4.9.2"
 
 [tasks."2webp"]
 run = '''
-cd docs/public/images
-for f in *.${usage_arg}; do 
+cd docs/public/images/2026
+for f in *.${usage_arg}; do
     ffmpeg -hide_banner -loglevel error -y -i "$f" \
-    "${f%.${usage_arg}}.webp" && rm "$f"; 
+    "${f%.${usage_arg}}.webp" && rm "$f";
 done
 '''
 alias = "2w"

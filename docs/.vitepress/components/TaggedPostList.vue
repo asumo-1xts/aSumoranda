@@ -14,8 +14,8 @@ let taggedPosts = posts.filter((page) =>
 <template>
   <ul style="list-style: none; padding-left: 0">
     <li v-for="post of taggedPosts">
-      <span class="text-sm">
-        {{ moment(post.frontmatter.date).format('YYYY-MM-DD') }}
+      <span class="text-sm" style="font-family: myCodeFont">
+        {{ moment(post.frontmatter.date).format('YYYY/MM/DD') }}
         {{ post.frontmatter.emoji }}&nbsp;</span
       >
       <a :href="`${post.url}`" class="font-semibold text-lg"

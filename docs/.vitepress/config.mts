@@ -65,13 +65,7 @@ export default defineConfigWithTheme({
     nav: [
       { text: 'All posts', link: '/posts' },
       { text: 'All tags', link: '/tags' },
-      { text: 'About', link: '/about' },
-      {
-        text: '1x telescope',
-        link: 'https://1xtelescope.com/',
-        target: '_blank',
-        rel: 'sponsored'
-      }
+      { text: 'About', link: '/about' }
     ],
 
     sidebar: [
@@ -83,12 +77,6 @@ export default defineConfigWithTheme({
           { text: 'All posts', link: '/posts' },
           { text: 'All tags', link: '/tags' },
           { text: 'About', link: '/about' },
-          {
-            text: '1x telescope',
-            link: 'https://1xtelescope.com/',
-            target: '_blank',
-            rel: 'sponsored'
-          },
           {
             text: 'X',
             link: 'https://x.com/asumo_1xts',
@@ -117,8 +105,7 @@ export default defineConfigWithTheme({
     },
 
     editLink: {
-      pattern:
-        'https://github.com/asumo-1xts/aSumoranda/blob/main/docs/:path',
+      pattern: 'https://github.com/asumo-1xts/aSumoranda/blob/main/docs/:path',
       text: 'GitHubで修正を提案'
     },
 
