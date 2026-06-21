@@ -24,3 +24,7 @@ let taggedPosts = posts.filter((page) =>
     </li>
   </ul>
 </template>
+
+<style>
+@import '../theme/fonts.css';
+</style>
