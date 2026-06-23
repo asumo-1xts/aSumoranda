@@ -1,11 +1,11 @@
 /**
- * @file        heartLand_mother.cpp
- * @author      aSumo
- * @brief       A sketch for ProMicro in USB-MIDI Controller "HeartLand"
- * @version     1.0
- * @date        2024-06-26
- * @copyright   GPL-3.0
- * @details     Merge MIDI message; "daughter"s one and mine, and TX/RX with USB
+ * @file      heartLand_mother.cpp
+ * @author    aSumo
+ * @brief     A sketch for ProMicro in USB-MIDI Controller "HeartLand"
+ * @version   1.0
+ * @date      2024-06-26
+ * @copyright GPL-3.0
+ * @details   Merge MIDI message; "daughter"s one and mine, and TX/RX with USB
  */
 
 //! https://github.com/tttapa/Control-Surface.git
