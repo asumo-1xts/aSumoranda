@@ -1,7 +1,7 @@
 /**
  * @file      heartLand_daughter.cpp
- * @author    aSumo (1xtelescope@gmail.com)
- * @brief     a sketch for Mega2560 ProMini in USB-MIDI Controller "HeartLand"
+ * @author    aSumo
+ * @brief     A sketch for Mega2560 ProMini in USB-MIDI Controller "HeartLand"
  * @version   1.0
  * @date      2024-06-26
  * @copyright GPL-3.0

@@ -1,7 +1,7 @@
 /**
  * @file        heartLand_mother.cpp
- * @author      aSumo (1xtelescope@gmail.com)
- * @brief       a sketch for ProMicro in USB-MIDI Controller "HeartLand"
+ * @author      aSumo
+ * @brief       A sketch for ProMicro in USB-MIDI Controller "HeartLand"
  * @version     1.0
  * @date        2024-06-26
  * @copyright   GPL-3.0
@@ -47,13 +47,6 @@ CCPotentiometer pot[] = {
     {A6, {5, Channel::createChannel(ch[1])}},  // FX_A
     {A7, {5, Channel::createChannel(ch[2])}},  // FX_B
 };
-
-// The maximum value that can be measured (usually 16383 = 2¹⁴-1)
-constexpr analog_t maxRawValue = 16383;
-// The filtered value read when potentiometer is at the 0% position
-constexpr analog_t minimumValue = maxRawValue / 64;
-// The filtered value read when potentiometer is at the 100% position
-constexpr analog_t maximumValue = maxRawValue - maxRawValue / 64;
 
 float BPM = 0;           //!< グローバルBPM
 uint8_t ppqn = 0;        //!< 24 Pulses Per Quarter Note

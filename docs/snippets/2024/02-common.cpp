@@ -1,3 +1,10 @@
+// The maximum value that can be measured (usually 16383 = 2¹⁴-1)
+constexpr analog_t maxRawValue = 16383;
+// The filtered value read when potentiometer is at the 0% position
+constexpr analog_t minimumValue = maxRawValue / 64;
+// The filtered value read when potentiometer is at the 100% position
+constexpr analog_t maximumValue = maxRawValue - maxRawValue / 64;
+
 /**
  * @brief   可変抵抗をLive上で正しく線形にマッピングする関数
  * @param   raw 可変抵抗から読み取った値
