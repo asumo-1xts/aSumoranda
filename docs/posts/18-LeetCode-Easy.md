@@ -2,7 +2,7 @@
 layout: doc
 
 emoji: 🏊
-title: LeetCode全部やる [Easy編]
+title: LeetCode全部やる [Easy編①]
 
 date: 2026-07-05
 permalink: 'https://blog.asumo.dev/posts/18-LeetCode-Easy.html'
@@ -17,7 +17,7 @@ tags:
 hidden: true
 ---
 
-# LeetCode全部やる [Easy編]
+# LeetCode全部やる [Easy編①]
 
 [<Badge type="tag" text="C/C++" />](../tags/ccpp)
 
@@ -36,6 +36,17 @@ hidden: true
 
 - 配列の末尾を削除すると$O(1)$だが、先頭を削除すると全体を前に詰める手間が生じて$O(n)$になる。無理に配列をいじらず、インデックスの位置をずらしていくのが良い
 - イテレータには向きがあり、`.base()`で反転する（振り返る）ことができる
+
+## 9. Palindrome Number
+
+### 方針
+
+実行速度と省メモリ性のどちらを優先するかによる。
+
+### 気付き
+
+- for文を使わず書けないか常に疑ってみる
+- 数字なので、半分を超えたかどうかは数えずとも大小比較で判定できる
 
 <br/>
 
