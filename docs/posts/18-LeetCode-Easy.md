@@ -27,6 +27,8 @@ hidden: true
 
 ## 1. Two Sum
 
+https://leetcode.com/problems/two-sum/
+
 ### 方針
 
 1. `nums`を昇順にソート
@@ -38,6 +40,8 @@ hidden: true
 - イテレータには向きがあり、`.base()`で反転する（振り返る）ことができる
 
 ## 9. Palindrome Number
+
+https://leetcode.com/problems/palindrome-number/
 
 ### 方針
 
