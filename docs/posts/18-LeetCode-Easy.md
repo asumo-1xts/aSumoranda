@@ -25,9 +25,7 @@ hidden: true
 
 本当に全部やれるのか？
 
-## 1. Two Sum 🥇
-
-https://leetcode.com/problems/two-sum/
+## [1. Two Sum](https://leetcode.com/problems/two-sum/) 🥇
 
 ### 方針
 
