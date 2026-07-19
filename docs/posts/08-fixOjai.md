@@ -1,7 +1,7 @@
 ---
 layout: doc
 
-emoji: ⚡
+emoji: 🌩️
 title: Strymon Ojaiの端子折れを修理
 
 date: 2025-10-23
