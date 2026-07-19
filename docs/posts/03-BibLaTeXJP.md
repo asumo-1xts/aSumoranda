@@ -78,17 +78,17 @@ BibLaTeXはBibTeXより新しく便利な部分もあるものの、日本語へ
 厄介なのは著者名省略の処理で、それ用のコマンドがbabelパッケージに依存？しているのに、babelパッケージが`japanese`をサポートしてくれていません。もっとも設定した言語そのものが文献リストに影響する訳ではなく、設定した言語ごとに特有の処理を行うというだけなので、`japanese`は便宜的に`british`で代用することにします。
 
 ::: code-group
-<<< @/snippets/2025/03-preamble.tex{tex} [main.tex ~vscode-icons:file-type-tex~]
+<<< @/snippets/2025/03-preamble.tex{tex} [main.tex ~~vscode-icons:file-type-tex~~]
 :::
 
 ## 本文
 
 :::details おそらくlatexmkrcも必要
-<<< @/snippets/2025/03-latexmkrc.pl{perl} [latexmkrc ~vscode-icons:file-type-perl~]
+<<< @/snippets/2025/03-latexmkrc.pl{perl} [latexmkrc ~~vscode-icons:file-type-perl~~]
 :::
 
 ::: code-group
-<<< @/snippets/2025/03-document.tex{tex} [main.tex ~vscode-icons:file-type-tex~]
+<<< @/snippets/2025/03-document.tex{tex} [main.tex ~~vscode-icons:file-type-tex~~]
 :::
 
 ## 結果

@@ -3,7 +3,7 @@ layout: doc
 
 title: About
 
-permalink: "https://blog.asumo.dev/about.html"
+permalink: 'https://blog.asumo.dev/about.html'
 
 prev: false
 next: false

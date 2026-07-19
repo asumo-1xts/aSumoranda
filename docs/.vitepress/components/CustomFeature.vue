@@ -69,7 +69,11 @@ onUnmounted(() => {
 })
 
 const normalizeBadge = (b: string | Badge): Badge =>
-  typeof b === 'string' ? { text: b } : b
+  typeof b === 'string'
+    ? {
+        text: b
+      }
+    : b
 </script>
 
 <template>
@@ -79,7 +83,9 @@ const normalizeBadge = (b: string | Badge): Badge =>
       <button
         @click="toggleAutoPlay"
         class="play-pause-btn"
-        :class="{ 'is-paused': !isAutoPlaying }"
+        :class="{
+          'is-paused': !isAutoPlaying
+        }"
       >
         <span class="btn-icon">{{
           isAutoPlaying ? '&nbsp;' : '&nbsp;'
@@ -98,7 +104,9 @@ const normalizeBadge = (b: string | Badge): Badge =>
           class="item-wrapper"
         >
           <div class="item">
-            <div class="icon">{{ feature.icon }}</div>
+            <div class="icon">
+              {{ feature.icon }}
+            </div>
             <div class="content">
               <a
                 :href="feature.link"
@@ -106,7 +114,9 @@ const normalizeBadge = (b: string | Badge): Badge =>
                 :rel="feature.rel"
                 class="title-link"
               >
-                <h3 class="title">{{ feature.title }}</h3>
+                <h3 class="title">
+                  {{ feature.title }}
+                </h3>
               </a>
               <div v-if="feature.badges?.length" class="meta-line">
                 <div class="badge-list">
@@ -118,7 +128,9 @@ const normalizeBadge = (b: string | Badge): Badge =>
                       :is="normalizeBadge(b).link ? 'a' : 'span'"
                       :href="normalizeBadge(b).link"
                       class="VPBadge tag"
-                      :class="{ 'has-link': normalizeBadge(b).link }"
+                      :class="{
+                        'has-link': normalizeBadge(b).link
+                      }"
                     >
                       {{ normalizeBadge(b).text }}
                     </component>

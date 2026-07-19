@@ -47,7 +47,14 @@ const CustomTheme: ThemeConfig = {
     const route = useRoute()
     const { frontmatter } = useData()
     imageViewer(route)
-    codeblocksFold({ route, frontmatter }, true, 200)
+    codeblocksFold(
+      {
+        route,
+        frontmatter
+      },
+      true,
+      200
+    )
   }
 }
 

@@ -29,7 +29,9 @@ export default defineConfigWithTheme({
     lineNumbers: true,
     config: (md) => {
       md.use(groupIconMdPlugin, {
-        titleBar: { includeSnippet: true }
+        titleBar: {
+          includeSnippet: true
+        }
       })
       md.use<LinkToCardPluginOptions>(linkToCardPlugin, {})
       md.use(footnote)
@@ -63,9 +65,18 @@ export default defineConfigWithTheme({
     outlineTitle: '目次',
 
     nav: [
-      { text: 'All posts', link: '/posts' },
-      { text: 'All tags', link: '/tags' },
-      { text: 'About', link: '/about' }
+      {
+        text: 'All posts',
+        link: '/posts'
+      },
+      {
+        text: 'All tags',
+        link: '/tags'
+      },
+      {
+        text: 'About',
+        link: '/about'
+      }
     ],
 
     sidebar: [
@@ -73,10 +84,22 @@ export default defineConfigWithTheme({
         text: 'For Mobile📱',
         collapsed: false,
         items: [
-          { text: 'Home', link: '/' },
-          { text: 'All posts', link: '/posts' },
-          { text: 'All tags', link: '/tags' },
-          { text: 'About', link: '/about' },
+          {
+            text: 'Home',
+            link: '/'
+          },
+          {
+            text: 'All posts',
+            link: '/posts'
+          },
+          {
+            text: 'All tags',
+            link: '/tags'
+          },
+          {
+            text: 'About',
+            link: '/about'
+          },
           {
             text: 'X',
             link: 'https://x.com/asumo_1xts',
@@ -95,8 +118,14 @@ export default defineConfigWithTheme({
     ],
 
     socialLinks: [
-      { icon: 'x', link: 'https://x.com/asumo_1xts' },
-      { icon: 'github', link: 'https://github.com/asumo-1xts' }
+      {
+        icon: 'x',
+        link: 'https://x.com/asumo_1xts'
+      },
+      {
+        icon: 'github',
+        link: 'https://github.com/asumo-1xts'
+      }
     ],
 
     footer: {
@@ -148,8 +177,20 @@ export default defineConfigWithTheme({
   // メタタグの設定
   // ページごとに設定したいものは、ここに書かないこと！（なぜかオーバーライドされない）
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { property: 'og:author', content: 'aSumo' }],
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: '/favicon.ico'
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'og:author',
+        content: 'aSumo'
+      }
+    ],
     [
       'meta',
       {
@@ -157,11 +198,41 @@ export default defineConfigWithTheme({
         content: 'https://blog.asumo.dev/cover01.png'
       }
     ],
-    ['meta', { property: 'og:locale', content: 'ja_JP' }],
-    ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:site_name', content: 'aSumoranda' }],
-    ['meta', { property: 'twitter:card', content: 'summary' }],
-    ['meta', { property: 'twitter:site', content: '@asumo_1xts' }],
+    [
+      'meta',
+      {
+        property: 'og:locale',
+        content: 'ja_JP'
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'og:type',
+        content: 'website'
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'og:site_name',
+        content: 'aSumoranda'
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'twitter:card',
+        content: 'summary'
+      }
+    ],
+    [
+      'meta',
+      {
+        property: 'twitter:site',
+        content: '@asumo_1xts'
+      }
+    ],
     [
       'script',
       {
@@ -203,11 +274,41 @@ export default defineConfigWithTheme({
     const author = pageData.frontmatter.author || 'aSumo'
     const url = pageData.frontmatter.permalink || 'https://blog.asumo.dev/'
     const canonicalUrl = url
-    head.push(['meta', { property: 'og:title', content: title }])
-    head.push(['meta', { property: 'og:description', content: description }])
-    head.push(['meta', { property: 'og:author', content: author }])
-    head.push(['meta', { property: 'og:url', content: url }])
-    head.push(['link', { rel: 'canonical', href: canonicalUrl }])
+    head.push([
+      'meta',
+      {
+        property: 'og:title',
+        content: title
+      }
+    ])
+    head.push([
+      'meta',
+      {
+        property: 'og:description',
+        content: description
+      }
+    ])
+    head.push([
+      'meta',
+      {
+        property: 'og:author',
+        content: author
+      }
+    ])
+    head.push([
+      'meta',
+      {
+        property: 'og:url',
+        content: url
+      }
+    ])
+    head.push([
+      'link',
+      {
+        rel: 'canonical',
+        href: canonicalUrl
+      }
+    ])
 
     // まとめて返す
     return head

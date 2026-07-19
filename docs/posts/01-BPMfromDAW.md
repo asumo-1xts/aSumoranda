@@ -64,8 +64,8 @@ DAWによってはMIDIタイムコードという内部データ的なものを�
 ほとんど同じ仕組みで、MIDIUSBライブラリじゃなく[Control Surfaceなる神ライブラリ](https://github.com/tttapa/Control-Surface.git 'Control Surface')を使って書くこともできました。
 
 ::: code-group
-<<< @/snippets/2024/01-MIDIUSB.ino{cpp} [MIDIUSB ver. ~vscode-icons:file-type-arduino~]
-<<< @/snippets/2024/01-Control-Surface.ino{cpp} [Control-Surface ver. ~vscode-icons:file-type-arduino~]
+<<< @/snippets/2024/01-MIDIUSB.ino{cpp} [MIDIUSB ver. ~~vscode-icons:file-type-arduino~~]
+<<< @/snippets/2024/01-Control-Surface.ino{cpp} [Control-Surface ver. ~~vscode-icons:file-type-arduino~~]
 :::
 
 Control Surface版は動作の最中にArduino IDEのシリアルモニタを開閉すると何故か停止しますが、実際の使用状況ではそもそもIDEを開かないのでヨシ！としています。とは言えあまり健全ではないので、~~ゆるゆると原因調査中です~~諦めました！

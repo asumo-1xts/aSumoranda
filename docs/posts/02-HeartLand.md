@@ -5,17 +5,17 @@ emoji: 🎛️
 title: 理想のMIDIコントローラを自作
 
 date: 2024-08-18
-permalink: "https://blog.asumo.dev/posts/02-HeartLand.html"
+permalink: 'https://blog.asumo.dev/posts/02-HeartLand.html'
 
 prev: false
 next: false
 
 tags:
-    - post2024
-    - arduino
-    - ccpp
-    - midi
-    - otherdiy
+  - post2024
+  - arduino
+  - ccpp
+  - midi
+  - otherdiy
 ---
 
 # 理想のMIDIコントローラを自作
@@ -33,7 +33,7 @@ tags:
 
 ## はじめに
 
-Ableton LiveでDJをやりたいんですが、MIDIコントローラーの選択肢が少なすぎる！求める機能をそれなりに備えているのはAkai APC40 mk2ですが、高額な上に球数も少ないので故障が怖いです。海外には[セミオーダーできるところ](https://yaeltex.com/ "YAELTEX")もあるようですが、とても趣味に出せる金額ではありません…
+Ableton LiveでDJをやりたいんですが、MIDIコントローラーの選択肢が少なすぎる！求める機能をそれなりに備えているのはAkai APC40 mk2ですが、高額な上に球数も少ないので故障が怖いです。海外には[セミオーダーできるところ](https://yaeltex.com/ 'YAELTEX')もあるようですが、とても趣味に出せる金額ではありません…
 
 仕方がないので自分で作ることにしました。
 
@@ -96,21 +96,21 @@ Ableton LiveでDJをやりたいんですが、MIDIコントローラーの選�
 
 ### ソースコード
 
-[Control Surfaceなる神ライブラリ](https://github.com/tttapa/Control-Surface "Control Surface")のおかげで簡潔かつスムーズに書けました。`example`ディレクトリを見れば大体何でもできるようになっています。
+[Control Surfaceなる神ライブラリ](https://github.com/tttapa/Control-Surface 'Control Surface')のおかげで簡潔かつスムーズに書けました。`example`ディレクトリを見れば大体何でもできるようになっています。
 
 個人的な工夫として、MIDIチャンネルを指定する箇所ではあえて同ライブラリの内部関数を用い、冒頭の変数で一括変更できるようにしました。
 
 ::: code-group
-<<< @/snippets/2024/02-mother.cpp{cpp} [for Mother ~vscode-icons:file-type-cpp~]
-<<< @/snippets/2024/02-daughter.cpp{cpp} [for Daughter ~vscode-icons:file-type-cpp~]
-<<< @/snippets/2024/02-common.cpp{cpp} [Common functions ~vscode-icons:file-type-cpp~]
+<<< @/snippets/2024/02-mother.cpp{cpp} [for Mother ~~vscode-icons:file-type-cpp~~]
+<<< @/snippets/2024/02-daughter.cpp{cpp} [for Daughter ~~vscode-icons:file-type-cpp~~]
+<<< @/snippets/2024/02-common.cpp{cpp} [Common functions ~~vscode-icons:file-type-cpp~~]
 :::
 
-mother側では、DAWからクロックを受けてLEDをメトロノーム的に光らせる機能を盛り込んでいます。詳細は[こちらの記事](./01-BPMfromDAW "ArduinoでDAWからBPMを取得")にて。
+mother側では、DAWからクロックを受けてLEDをメトロノーム的に光らせる機能を盛り込んでいます。詳細は[こちらの記事](./01-BPMfromDAW 'ArduinoでDAWからBPMを取得')にて。
 
 ### 基板
 
-普段エフェクターを作ったりするときは自分で配線まで考えるのですが、今回はちょっと大変だったので[自動配線ツール](https://freerouting.mihosoft.eu/ "Freerouting")を利用して電源ラインだけ手直ししました。本当はもっと拘るべきですが、まあ趣味のものなので最終的に問題なく動作していればOKとさせてください。
+普段エフェクターを作ったりするときは自分で配線まで考えるのですが、今回はちょっと大変だったので[自動配線ツール](https://freerouting.mihosoft.eu/ 'Freerouting')を利用して電源ラインだけ手直ししました。本当はもっと拘るべきですが、まあ趣味のものなので最終的に問題なく動作していればOKとさせてください。
 
 表側の基板（部品を載せないガワの方）にも両面GNDベタを施しておくと、強度がかなり上がってたわみにくくなります。これまた本当はノイズなどの影響を吟味すべきですが、とりあえず目先の実用性をとっています。
 
@@ -123,7 +123,7 @@ mother側では、DAWからクロックを受けてLEDをメトロノーム的�
   caption="←2D | 3D→"
 />
 
-ボタンはキーボード用のCherry MXのやつを採用することにしました。軸とキーキャップを選べて楽しいです。フェーダのフットプリントの選択に少し悩みましたが、KICADにデフォルトで入っている`Potentiometer_THT:Potentiometer_Bourns_PTA4543_Single_Slide`を使えば[秋月で売っているやつ](https://akizukidenshi.com/catalog/g/g109238/ "[109238]スライドボリューム(B10kΩ) SL4515N-B103L15CM")がそのまま使えました。
+ボタンはキーボード用のCherry MXのやつを採用することにしました。軸とキーキャップを選べて楽しいです。フェーダのフットプリントの選択に少し悩みましたが、KICADにデフォルトで入っている`Potentiometer_THT:Potentiometer_Bourns_PTA4543_Single_Slide`を使えば[秋月で売っているやつ](https://akizukidenshi.com/catalog/g/g109238/ '[109238]スライドボリューム(B10kΩ) SL4515N-B103L15CM')がそのまま使えました。
 
 ## 組み立て・完成
 

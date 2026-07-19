@@ -5,7 +5,10 @@ const GITHUB_REPO = 'your-repo-name' // GitHubの当該リポジトリ名
 exports.handler = async (event) => {
   // POSTメソッド以外は拒否
   if (event.httpMethod !== 'POST') {
-    return { statusCode: 405, body: 'Method Not Allowed' }
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed'
+    }
   }
 
   const sig = event.headers['stripe-signature']
@@ -21,7 +24,10 @@ exports.handler = async (event) => {
     )
   } catch (err) {
     console.error(`Webhook Error: ${err.message}`)
-    return { statusCode: 400, body: `Webhook Error: ${err.message}` }
+    return {
+      statusCode: 400,
+      body: `Webhook Error: ${err.message}`
+    }
   }
 
   // 決済完了イベント（checkout.session.completed）の処理
@@ -69,13 +75,18 @@ exports.handler = async (event) => {
       console.log('GitHub Actions triggered successfully')
     } catch (err) {
       console.error('Processing Error:', err)
-      return { statusCode: 500, body: 'Internal Server Error' }
+      return {
+        statusCode: 500,
+        body: 'Internal Server Error'
+      }
     }
   }
 
   // Stripeへの成功レスポンス
   return {
     statusCode: 200,
-    body: JSON.stringify({ received: true })
+    body: JSON.stringify({
+      received: true
+    })
   }
 }
