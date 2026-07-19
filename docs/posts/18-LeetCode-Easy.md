@@ -52,6 +52,18 @@ https://leetcode.com/problems/palindrome-number/
 - for文を使わず書けないか常に疑ってみる
 - 数字なので、半分を超えたかどうかは数えずとも大小比較で判定できる
 
+## 13. Roman to Integer
+
+https://leetcode.com/problems/roman-to-integer/
+
+### 方針
+
+先頭から見るか末尾から見るかをよく考える。
+
+### 気付き
+
+末尾から見れば、文字の組み合わせを考えずとも数の大小だけで判定できる。
+
 <br/>
 
 ---
