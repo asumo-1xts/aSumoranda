@@ -25,7 +25,7 @@ hidden: true
 
 本当に全部やれるのか？
 
-## 1. Two Sum
+## 1. Two Sum 🥇
 
 https://leetcode.com/problems/two-sum/
 
@@ -39,7 +39,7 @@ https://leetcode.com/problems/two-sum/
 - 配列の末尾を削除すると$O(1)$だが、先頭を削除すると全体を前に詰める手間が生じて$O(n)$になる。無理に配列をいじらず、インデックスの位置をずらしていくのが良い
 - イテレータには向きがあり、`.base()`で反転する（振り返る）ことができる
 
-## 9. Palindrome Number
+## 9. Palindrome Number 🥈
 
 https://leetcode.com/problems/palindrome-number/
 
@@ -52,7 +52,7 @@ https://leetcode.com/problems/palindrome-number/
 - for文を使わず書けないか常に疑ってみる
 - 数字なので、半分を超えたかどうかは数えずとも大小比較で判定できる
 
-## 13. Roman to Integer
+## 13. Roman to Integer 🥈
 
 https://leetcode.com/problems/roman-to-integer/
 
@@ -60,9 +60,17 @@ https://leetcode.com/problems/roman-to-integer/
 
 先頭から見るか末尾から見るかをよく考える。
 
-### 気付き
-
 末尾から見れば、文字の組み合わせを考えずとも数の大小だけで判定できる。
+
+## 14. Longest Common Prefix 🥇
+
+https://leetcode.com/problems/longest-common-prefix/
+
+### 方針
+
+初め勘違いしていたが、Prefixなので先頭の共通部分だけを見れば良い。
+
+文字一つ一つではなく文字列全体を比較して、合うまで長い方を`pop_back()`する。
 
 <br/>
 
