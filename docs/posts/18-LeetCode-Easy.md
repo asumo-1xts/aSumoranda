@@ -64,6 +64,24 @@ hidden: true
 
 文字一つ一つではなく文字列全体を比較して、合うまで長い方を`pop_back()`する。
 
+## [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/) 🥇
+
+### 方針
+
+新たにスタックを用意して文字を積んでいき、括弧が閉じたら`pop_back()`する。
+
+### 気付き
+
+文字列をfor文で走査するときは
+
+```cpp
+for (char c : s) {
+  // cは文字列sの各文字
+}
+```
+
+のような書き方ができる。
+
 <br/>
 
 ---
