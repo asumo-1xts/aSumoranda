@@ -23,6 +23,8 @@ hidden: true
 
 ## はじめに
 
+解答はここ: https://github.com/asumo-1xts/isCatBot
+
 本当に全部やれるのか？
 
 ## [1. Two Sum](https://leetcode.com/problems/two-sum/) 🥇
@@ -81,6 +83,35 @@ for (char c : s) {
 ```
 
 のような書き方ができる。
+
+## [21. Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/) 🥉
+
+### 方針
+
+なぜ謎の構造体を使うのか、普通に配列でやれば良いだろ！と思ったら、どうやらノードたちを繋ぎ合わせてくださいねという誘導だったらしい。
+
+### 気付き
+
+```cpp
+struct ListNode {
+    int val;
+    ListNode* next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode* next) : val(x), next(next) {}
+};
+```
+
+上記の意味するところは
+
+- 構造体`NodeList`
+  - 整数`val`
+  - 他の`NodeList`へのポインタ`next`
+  - ↓
+- 構造体`NodeList`
+  - ...
+
+ということらしく、ラスト3行は宣言時のテンプレートを示している。 
 
 <br/>
 
