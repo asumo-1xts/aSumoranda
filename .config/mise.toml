@@ -1,5 +1,4 @@
 [tools]
-node = "latest"
 yarn = "4.9.2"
 
 [tasks."2webp"]
