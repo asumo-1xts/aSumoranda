@@ -161,7 +161,7 @@ Netlifyにログインして、プロジェクトの「Environment Variables」�
 をPythonスクリプトで実行しています。
 
 ::: code-group
-<<< @/snippets/2026/15-stripe-webhook.yml{yaml} [.github/workflows/stripe-webhook.yml ~~vscode-icons:folder-type-github~~]
+<<< @/snippets/2026/15-stripe-webhook.yml{yaml} [.github/workflows/stripe-webhook.yml ~vscode-icons:folder-type-github~]
 <<< @/snippets/2026/15-update_stock.py{python} [update_stock.py]
 <<< @/snippets/2026/15-send_email.py{python} [send_email.py]
 :::

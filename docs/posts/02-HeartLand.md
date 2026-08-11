@@ -111,9 +111,9 @@ Ableton LiveでDJをやりたいんですが、MIDIコントローラーの選�
 個人的な工夫として、MIDIチャンネルを指定する箇所ではあえて同ライブラリの内部関数を用い、冒頭の変数で一括変更できるようにしました。
 
 ::: code-group
-<<< @/snippets/2024/02-mother.cpp{cpp} [for Mother ~~vscode-icons:file-type-cpp~~]
-<<< @/snippets/2024/02-daughter.cpp{cpp} [for Daughter ~~vscode-icons:file-type-cpp~~]
-<<< @/snippets/2024/02-common.cpp{cpp} [Common functions ~~vscode-icons:file-type-cpp~~]
+<<< @/snippets/2024/02-mother.cpp{cpp} [for Mother ~vscode-icons:file-type-cpp~]
+<<< @/snippets/2024/02-daughter.cpp{cpp} [for Daughter ~vscode-icons:file-type-cpp~]
+<<< @/snippets/2024/02-common.cpp{cpp} [Common functions ~vscode-icons:file-type-cpp~]
 :::
 
 mother側では、DAWからクロックを受けてLEDをメトロノーム的に光らせる機能を盛り込んでいます。詳細は[こちらの記事](./01-BPMfromDAW 'ArduinoでDAWからBPMを取得')にて。

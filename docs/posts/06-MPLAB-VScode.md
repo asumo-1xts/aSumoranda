@@ -107,8 +107,8 @@ C/C++を触ったことがある方の多くが、Microsoft製の「C/C++」な�
 プロジェクト名の通り、LEDをチカチカさせます。
 
 ::: code-group
-<<< @/snippets/2025/06-main.c{c} [main.c ~~vscode-icons:file-type-c~~]
-<<< @/snippets/2025/06-header.h{c} [header.h ~~vscode-icons:file-type-cheader~~]
+<<< @/snippets/2025/06-main.c{c} [main.c ~vscode-icons:file-type-c~]
+<<< @/snippets/2025/06-header.h{c} [header.h ~vscode-icons:file-type-cheader~]
 :::
 
 ## コンパイル
@@ -148,8 +148,8 @@ VScode上のコマンドパレット（`F1`キー）から「MPLAB」と入力�
 MPLAB X IPEを立ち上げてGUIで書き込んでも良いのですが、このIPEにはコマンドラインで使える書き込み用のexeファイルが付属しています。`C:\Program Files\Microchip\MPLABX\v6.20\mplab_platform\mplab_ipe`に`ipecmd.exe`なるexeファイルがあることを確認してください。これを下記のコマンドでVScode上のターミナルから呼び出せば、VScodeに張り付いたまま書き込み作業まで完結できます。
 
 ::: code-group
-<<< @/snippets/2025/06-write_hex.ps1{powershell} [Windows 11 ~~vscode-icons:file-type-powershell~~]
-<<< @/snippets/2025/06-write_hex.sh{shell} [(Debian 13) ~~vscode-icons:file-type-shell~~]
+<<< @/snippets/2025/06-write_hex.ps1{powershell} [Windows 11 ~vscode-icons:file-type-powershell~]
+<<< @/snippets/2025/06-write_hex.sh{shell} [(Debian 13) ~vscode-icons:file-type-shell~]
 :::
 
 長いので筆者はps1ファイルとして実行しています。見ての通り、マイコンやライターに応じて`-P12F675`や`-TPPK3`のオプションを変更すれば良いです。

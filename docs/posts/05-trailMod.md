@@ -124,10 +124,10 @@ tags:
 電源投入時のオプション設定（オルタネイト/モーメンタリなど）を含めてしまっているので量が多くなってしまっていますが、重要な処理は`TURN()`、`scanModeSw()`あたりでしょうか。具体的に何が起こっているのかの説明はコメントアウトに託しました。
 
 ::: code-group
-<<< @/snippets/2025/05-main.c{c} [main.c ~~vscode-icons:file-type-c~~]
-<<< @/snippets/2025/05-header.h{c} [header.h ~~vscode-icons:file-type-cheader~~]
-<<< @/snippets/2025/05-common.c{c} [common.c ~~vscode-icons:file-type-c~~]
-<<< @/snippets/2025/05-PIC12F6XX.c{c} [PIC12F6XX.c ~~vscode-icons:file-type-c~~]
+<<< @/snippets/2025/05-main.c{c} [main.c ~vscode-icons:file-type-c~]
+<<< @/snippets/2025/05-header.h{c} [header.h ~vscode-icons:file-type-cheader~]
+<<< @/snippets/2025/05-common.c{c} [common.c ~vscode-icons:file-type-c~]
+<<< @/snippets/2025/05-PIC12F6XX.c{c} [PIC12F6XX.c ~vscode-icons:file-type-c~]
 :::
 
 ## 完了
