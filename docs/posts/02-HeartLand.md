@@ -12,6 +12,7 @@ next: false
 
 tags:
   - post2024
+  - kicad
   - arduino
   - ccpp
   - midi
@@ -22,6 +23,7 @@ tags:
 
 [<Badge type="tag" text="その他の工作" />](../tags/otherdiy)
 [<Badge type="tag" text="MIDI" />](../tags/midi)
+[<Badge type="tag" text="KiCad" />](../tags/kicad)
 [<Badge type="tag" text="Arduino" />](../tags/arduino)
 [<Badge type="tag" text="C/C++" />](../tags/ccpp)
 
@@ -36,6 +38,14 @@ tags:
 Ableton LiveでDJをやりたいんですが、MIDIコントローラーの選択肢が少なすぎる！求める機能をそれなりに備えているのはAkai APC40 mk2ですが、高額な上に球数も少ないので故障が怖いです。海外には[セミオーダーできるところ](https://yaeltex.com/ 'YAELTEX')もあるようですが、とても趣味に出せる金額ではありません…
 
 仕方がないので自分で作ることにしました。
+
+<ImageGroup
+  :sources="[
+    '/images/2024/02-05.webp'
+  ]"
+  type="big"
+  caption="最終的に完成したもの"
+/>
 
 ## 環境
 
