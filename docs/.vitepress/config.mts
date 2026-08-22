@@ -255,7 +255,11 @@ export default defineConfigWithTheme({
     const FontFile = assets.find((file) =>
       /GenInterfaceJP-Regular\.\w+\.woff2$/.test(file)
     )
-    if (FontFile) {
+    const hasFontPreload = head.some(
+      ([tag, attrs]) =>
+        tag === 'link' && attrs?.rel === 'preload' && attrs.href === FontFile
+    )
+    if (FontFile && !hasFontPreload) {
       head.push([
         'link',
         {
