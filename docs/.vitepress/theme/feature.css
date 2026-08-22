@@ -1,0 +1,124 @@
+@import './badge.css';
+
+/* 制御ボタン */
+.custom-features .controls {
+  position: sticky;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+.custom-features .play-pause-btn {
+  font-family: 'myCodeFont', monospace;
+  font-size: medium;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--vp-c-divider);
+  background-color: var(--vp-c-bg);
+  color: var(--vp-c-brand-1);
+  transition: all 0.25s;
+  cursor: pointer;
+}
+.custom-features .play-pause-btn:hover {
+  border-color: var(--vp-c-brand-1);
+}
+.custom-features .play-pause-btn:not(.is-paused) {
+  color: var(--vp-c-red-1);
+}
+.custom-features .play-pause-btn:not(.is-paused):hover {
+  border-color: var(--vp-c-red-1);
+}
+
+/* Features */
+.custom-features {
+  margin: 1.2rem 0;
+  width: 100%;
+}
+.custom-features .items {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+}
+.custom-features .item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid var(--vp-c-bg-soft);
+  border-radius: 12px;
+  padding: 12px 16px;
+  background-color: var(--vp-c-bg-soft);
+  transition: all 0.2s;
+  min-width: 0;
+}
+.custom-features .item:hover {
+  border-color: var(--vp-c-brand-1);
+}
+.custom-features .icon {
+  flex-shrink: 0;
+  font-size: xx-large;
+  line-height: 1;
+}
+.custom-features .content {
+  flex-grow: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+.custom-features .title-link {
+  text-decoration: none;
+  color: inherit;
+}
+.custom-features .title-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+.custom-features .title {
+  margin: 0 0 0 0.33rem !important;
+  font-family: 'mySubFont', sans-serif;
+  font-size: medium;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--vp-c-text-1);
+  display: -webkit-box;
+  line-clamp: 2;
+  overflow: hidden;
+  word-break: break-word;
+}
+.custom-features .meta-line {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  min-height: 64px;
+}
+.custom-features .badge-list {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.custom-features .VPBadge {
+  margin-top: 4px;
+  text-decoration: none;
+  pointer-events: none;
+}
+.custom-features .VPBadge.has-link {
+  pointer-events: auto;
+}
+
+/* Date */
+.custom-features .date-line {
+  width: 100%;
+  text-align: right;
+  margin: 0 0.33rem 0 0 !important;
+  font-size: small;
+  color: var(--vp-c-text-2);
+}
