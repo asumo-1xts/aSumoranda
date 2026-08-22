@@ -15,5 +15,5 @@ withDefaults(defineProps<Props>(), {
 </template>
 
 <style>
-@import '../theme/badge.css';
+@import '../theme/CustomBadge.css';
 </style>

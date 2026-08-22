@@ -151,5 +151,5 @@ const normalizeBadge = (b: string | Badge): Badge =>
 </template>
 
 <style>
-@import '../theme/feature.css';
+@import '../theme/CustomFeature.css';
 </style>
