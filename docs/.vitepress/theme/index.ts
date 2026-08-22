@@ -1,4 +1,4 @@
-import { h } from 'vue'
+import { h, onMounted } from 'vue'
 import DefaultTheme from 'vitepress/theme-without-fonts'
 import type { Theme as ThemeConfig } from 'vitepress'
 import { useData, useRoute } from 'vitepress'
@@ -28,6 +28,32 @@ import 'viewerjs/dist/viewer.min.css'
 import 'vitepress-plugin-codeblocks-fold/style/index.css'
 import 'virtual:group-icons.css'
 
+const analyticsId = 'G-SRVS9XNT7N'
+
+function loadAnalytics() {
+  const scriptId = 'google-analytics-script'
+  if (document.getElementById(scriptId)) return
+
+  const windowWithAnalytics = window as typeof window & {
+    dataLayer: unknown[]
+    gtag: (...args: unknown[]) => void
+  }
+  windowWithAnalytics.dataLayer = windowWithAnalytics.dataLayer || []
+  windowWithAnalytics.gtag = (...args) => {
+    windowWithAnalytics.dataLayer.push(args)
+  }
+  windowWithAnalytics.gtag('js', new Date())
+  windowWithAnalytics.gtag('config', analyticsId, {
+    page_path: `${location.pathname}${location.search}${location.hash}`
+  })
+
+  const script = document.createElement('script')
+  script.id = scriptId
+  script.async = true
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`
+  document.head.appendChild(script)
+}
+
 const CustomTheme: ThemeConfig = {
   extends: DefaultTheme,
   Layout: () => {
@@ -42,6 +68,11 @@ const CustomTheme: ThemeConfig = {
     ctx.app.component('CustomFeature', CustomFeature)
     ctx.app.component('CustomBadge', CustomBadge)
     ctx.app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
+    ctx.router.onAfterRouteChanged = (to) => {
+      if (typeof window !== 'undefined') {
+        window.gtag?.('config', analyticsId, { page_path: to })
+      }
+    }
   },
   setup() {
     const route = useRoute()
@@ -55,6 +86,14 @@ const CustomTheme: ThemeConfig = {
       true,
       200
     )
+    onMounted(() => {
+      const scheduleLoad = () => loadAnalytics()
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(scheduleLoad, { timeout: 3000 })
+      } else {
+        setTimeout(scheduleLoad, 3000)
+      }
+    })
   }
 }
 
