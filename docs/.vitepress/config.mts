@@ -235,18 +235,26 @@ export default defineConfigWithTheme({
     ],
     [
       'script',
-      {
-        async: 'true',
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-SRVS9XNT7N'
-      }
-    ],
-    [
-      'script',
       {},
       `window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-SRVS9XNT7N');`
+    ],
+    [
+      'script',
+      {},
+      `const loadAnalytics = () => {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-SRVS9XNT7N';
+        document.head.appendChild(script);
+      };
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      } else {
+        setTimeout(loadAnalytics, 3000);
+      }`
     ]
   ],
 
