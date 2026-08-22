@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { data as posts } from '../posts.data'
-import moment from 'moment'
 const props = defineProps(['tag'])
+const formatDate = (date: string) => date.slice(0, 10).replaceAll('-', '/')
 let taggedPosts = posts.filter((page) =>
   page.frontmatter.tags
     .toString()
@@ -15,7 +15,7 @@ let taggedPosts = posts.filter((page) =>
   <ul style="list-style: none; padding-left: 0">
     <li v-for="post of taggedPosts">
       <span class="text-sm" style="font-family: myCodeFont">
-        {{ moment(post.frontmatter.date).format('YYYY/MM/DD') }}
+        {{ formatDate(post.frontmatter.date) }}
         {{ post.frontmatter.emoji }}&nbsp;</span
       >
       <a :href="`${post.url}`" class="font-semibold text-lg"
