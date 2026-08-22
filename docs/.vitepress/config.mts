@@ -251,10 +251,9 @@ export default defineConfigWithTheme({
   ],
 
   transformHead({ assets, pageData, head }) {
-    // フォントのプリロード
-    const FontFile = assets.find(
-      (file) =>
-        /(NotoSansJP-VariableFont_wght|ZenKakuGothicNew-Regular|MoralerspaceNeonHW-Regular)\.\w+\.woff2$/
+    // 初期表示で使う本文用フォントだけを先読みする
+    const FontFile = assets.find((file) =>
+      /GenInterfaceJP-Regular\.\w+\.woff2$/.test(file)
     )
     if (FontFile) {
       head.push([
@@ -263,7 +262,8 @@ export default defineConfigWithTheme({
           rel: 'preload',
           href: FontFile,
           as: 'font',
-          type: 'font/woff2'
+          type: 'font/woff2',
+          crossorigin: ''
         }
       ])
     }
