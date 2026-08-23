@@ -16,9 +16,7 @@ lastUpdated: false
 
 ## このサイトについて
 
-ｱｽﾓが自由にものを書くための場所です。
-
-以下の思想に基づいて作られました。
+以下の思想に基づいて作られた、自由に書くための場所です。
 
 - ジャンルを問わない
 - 広告が無い
@@ -28,14 +26,12 @@ lastUpdated: false
 
 特別に記述が無い限り、コンテンツには[CC-BY-SA-4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.ja)を付与します。
 
-## ｱｽﾓ（管理人）
+## 書いている人
 
-工事中: https://asumo.dev/
+https://asumo.dev/
 
 ## 1x telescope（ﾄｳﾊﾞｲﾃﾚｽｺｰﾌﾟ）
 
-ｱｽﾓが何かを作るときの屋号です。
-
-現在は主にエフェクターを作っています。
+エフェクター等を作るときの屋号です。
 
 [1x telescope](@:https://1xtelescope.com/)
