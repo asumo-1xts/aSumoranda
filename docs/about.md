@@ -32,6 +32,6 @@ https://asumo.dev/
 
 ## 1x telescope（ﾄｳﾊﾞｲﾃﾚｽｺｰﾌﾟ）
 
-エフェクター等を作るときの屋号です。
+ギターエフェクター等の設計・製作・販売をしています。
 
 [1x telescope](@:https://1xtelescope.com/)

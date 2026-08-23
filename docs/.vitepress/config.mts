@@ -76,6 +76,12 @@ export default defineConfigWithTheme({
       {
         text: 'About',
         link: '/about'
+      },
+      {
+        text: '1x telescope',
+        link: 'https://1xtelescope.com/',
+        target: '_blank',
+        rel: 'noopener'
       }
     ],
 
@@ -99,6 +105,12 @@ export default defineConfigWithTheme({
           {
             text: 'About',
             link: '/about'
+          },
+          {
+            text: '1x telescope',
+            link: 'https://1xtelescope.com/',
+            target: '_blank',
+            rel: 'noopener'
           },
           {
             text: 'X',
