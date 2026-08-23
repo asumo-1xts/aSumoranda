@@ -21,7 +21,7 @@ export default defineConfigWithTheme({
   lang: 'ja-JP',
   base: '/',
   title: 'aSumoranda',
-  description: 'ｱｽﾓのﾒﾓﾗﾝﾀﾞ、ｱｽﾓﾗﾝﾀﾞ',
+  description: 'ｱｽﾓﾗﾝﾀﾞ',
   appearance: 'force-dark', // ダークモードのみ
 
   markdown: {
@@ -259,7 +259,7 @@ export default defineConfigWithTheme({
 
     // 動的なメタタグの設定
     const title = pageData.frontmatter.title || 'aSumoranda'
-    const description = pageData.frontmatter.description || 'ｱｽﾓのﾒﾓﾗﾝﾀﾞ、ｱｽﾓﾗﾝﾀﾞ'
+    const description = pageData.frontmatter.description || 'ｱｽﾓﾗﾝﾀﾞ'
     const author = pageData.frontmatter.author || 'aSumo'
     const url = pageData.frontmatter.permalink || 'https://blog.asumo.dev/'
     const canonicalUrl = url

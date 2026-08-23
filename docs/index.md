@@ -5,7 +5,7 @@ title: Home
 
 hero:
   name: aSumoranda
-  tagline: ｱｽﾓのﾒﾓﾗﾝﾀﾞ、ｱｽﾓﾗﾝﾀﾞ
+  tagline: ｱｽﾓﾗﾝﾀﾞ
   image:
     src: cover01.webp
     alt: aSumoranda

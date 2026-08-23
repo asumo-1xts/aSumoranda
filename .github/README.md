@@ -1,6 +1,6 @@
 # aSumoranda [![License: CC-BY-SA-4.0](https://img.shields.io/badge/License-CC--BY--SA--4.0-green.svg)](/LICENSE.md)
 
-**ｱｽﾓのﾒﾓﾗﾝﾀﾞ、ｱｽﾓﾗﾝﾀﾞ**
+**ｱｽﾓﾗﾝﾀﾞ**
 
 **See: https://blog.asumo.dev/**
 
