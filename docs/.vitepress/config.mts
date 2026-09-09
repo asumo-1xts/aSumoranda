@@ -207,7 +207,7 @@ export default defineConfigWithTheme({
       'meta',
       {
         property: 'og:image',
-        content: 'https://blog.asumo.dev/cover01.png'
+        content: 'https://blog.asumo.dev/cover.png'
       }
     ],
     [

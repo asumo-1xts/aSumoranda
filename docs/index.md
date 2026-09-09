@@ -7,7 +7,7 @@ hero:
   name: aSumoranda
   tagline: ｱｽﾓﾗﾝﾀﾞ
   image:
-    src: cover01.webp
+    src: cover.webp
     alt: aSumoranda
 
 permalink: 'https://blog.asumo.dev/'
