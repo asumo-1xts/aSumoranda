@@ -23,7 +23,7 @@ hidden: true
 
 ## はじめに
 
-解答はここ: https://github.com/asumo-1xts/isCatBot
+解答はここ: https://github.com/asumo-1xts/LeetCode-Easy
 
 本当に全部やれるのか？
 

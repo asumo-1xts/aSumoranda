@@ -58,5 +58,20 @@
     "title": "GitHub - asumo-1xts/J2J: Just the Two of JIS - My ideal split keyboard",
     "description": "Just the Two of JIS - My ideal split keyboard. Contribute to asumo-1xts/J2J development by creating an account on GitHub.",
     "logo": "https://opengraph.githubassets.com/6e2d60398265f13296e01224e737cc63bf4b07710fc6c846e9fc0f2762579e09/asumo-1xts/J2J"
+  },
+  "https://github.com/asumo-1xts/GoE": {
+    "title": "GitHub - asumo-1xts/GoE: The God of Enter - Enterで確定/改行、Ctrl+Enterで送信",
+    "description": "The God of Enter - Enterで確定/改行、Ctrl+Enterで送信. Contribute to asumo-1xts/GoE development by creating an account on GitHub.",
+    "logo": "https://opengraph.githubassets.com/c0122c25f0f201d100611e46fa074449bfc90826529e26c5ad6ea4ce4ce151ef/asumo-1xts/GoE"
+  },
+  "https://qiita.com/kenichiro_ayaki/items/d55005df2787da725c6f": {
+    "title": "Autohotkey v2.0のIME制御用 関数群 IMEv2.ahk - Qiita",
+    "description": "1 はじめに Autohotkey v2.0 に、キーボード配列エミュレーションソフトウエア紅皿を移植する上で、先ずはIME制御用 関数群 IME.ahk を v2.0 に移植しました。 2 IME.ahk IMEの制御ライブラりIME.ahkは、eamatさんが...\" name=\"description",
+    "logo": "https://qiita-user-contents.imgix.net/https%3A%2F%2Fqiita-user-contents.imgix.net%2Fhttps%253A%252F%252Fcdn.qiita.com%252Fassets%252Fpublic%252Farticle-ogp-background-afbab5eb44e0b055cce1258705637a91.png%3Fixlib%3Drb-4.1.1%26w%3D1200%26blend64%3DaHR0cHM6Ly9xaWl0YS11c2VyLXByb2ZpbGUtaW1hZ2VzLmltZ2l4Lm5ldC9odHRwcyUzQSUyRiUyRnFpaXRhLWltYWdlLXN0b3JlLnMzLmFwLW5vcnRoZWFzdC0xLmFtYXpvbmF3cy5jb20lMkYwJTJGMjY2MjczJTJGcHJvZmlsZS1pbWFnZXMlMkYxNjQyODMwMTIzP2l4bGliPXJiLTQuMS4xJmFyPTElM0ExJmZpdD1jcm9wJm1hc2s9ZWxsaXBzZSZiZz1GRkZGRkYmZm09cG5nMzImcz1kOTU0YTZkNGRiOGRlN2NlN2U5MzhhM2Q1ZTcyYzYzMA%26blend-x%3D120%26blend-y%3D467%26blend-w%3D82%26blend-h%3D82%26blend-mode%3Dnormal%26s%3D098892386938bfa5bde8b3799e964943?ixlib=rb-4.1.1&amp;w=1200&amp;fm=jpg&amp;mark64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTk2MCZoPTMyNCZ0eHQ9QXV0b2hvdGtleSUyMHYyLjAlRTMlODElQUVJTUUlRTUlODglQjYlRTUlQkUlQTElRTclOTQlQTglMjAlRTklOTYlQTIlRTYlOTUlQjAlRTclQkUlQTQlMjBJTUV2Mi5haGsmdHh0LWFsaWduPWxlZnQlMkN0b3AmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT01NiZ0eHQtcGFkPTAmcz0yNThlMThiNmJhYzBhMTA2Yjc5MGZhZDE3YjE1OTlkNA&amp;mark-x=120&amp;mark-y=112&amp;blend64=aHR0cHM6Ly9xaWl0YS11c2VyLWNvbnRlbnRzLmltZ2l4Lm5ldC9-dGV4dD9peGxpYj1yYi00LjEuMSZ3PTgzOCZoPTU4JnR4dD0lNDBrZW5pY2hpcm9fYXlha2kmdHh0LWNvbG9yPSUyMzFFMjEyMSZ0eHQtZm9udD1IaXJhZ2lubyUyMFNhbnMlMjBXNiZ0eHQtc2l6ZT0zNiZ0eHQtcGFkPTAmcz1hNTFjMGNkZDFkY2Q2MmU4OTg0ZDU4NzJhNjM0NTE2OA&amp;blend-x=242&amp;blend-y=480&amp;blend-w=838&amp;blend-h=46&amp;blend-fit=crop&amp;blend-crop=left%2Cbottom&amp;blend-mode=normal&amp;s=6fc197aee87233ddf3eedd1d0c29ac31"
+  },
+  "https://github.com/Descolada/UIA-v2": {
+    "title": "GitHub - Descolada/UIA-v2: UIAutomation library for AHK v2, based on thqby&#39;s UIA library",
+    "description": "UIAutomation library for AHK v2, based on thqby&#39;s UIA library - Descolada/UIA-v2",
+    "logo": "https://opengraph.githubassets.com/2e1f0038375b39645a74083e6d6231cf3f9b3f68ab1c49c4035a6c5387af7214/Descolada/UIA-v2"
   }
 }
