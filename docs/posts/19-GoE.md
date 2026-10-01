@@ -4,7 +4,7 @@ layout: doc
 emoji: 🪽
 title: チャットの誤送信を撲滅するツール
 
-date: 2026-09-15
+date: 2026-10-01
 permalink: 'https://blog.asumo.dev/posts/19-GoE.html'
 
 prev: false
