@@ -68,31 +68,27 @@ const CustomTheme: ThemeConfig = {
     ctx.app.component('CustomFeature', CustomFeature)
     ctx.app.component('CustomBadge', CustomBadge)
     ctx.app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
-    ctx.router.onAfterRouteChanged = (to) => {
-      if (typeof window !== 'undefined') {
-        window.gtag?.('config', analyticsId, { page_path: to })
-      }
-    }
   },
   setup() {
     const route = useRoute()
-    const { frontmatter } = useData()
     imageViewer(route)
-    codeblocksFold(
-      {
-        route,
-        frontmatter
-      },
-      true,
-      200
-    )
+
     onMounted(() => {
-      const scheduleLoad = () => loadAnalytics()
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(scheduleLoad, { timeout: 3000 })
-      } else {
-        setTimeout(scheduleLoad, 3000)
-      }
+      window.setTimeout(() => {
+        if (document.getElementById('google-analytics')) return
+
+        const config = document.createElement('script')
+        config.text =
+          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SRVS9XNT7N')"
+
+        const analytics = document.createElement('script')
+        analytics.id = 'google-analytics'
+        analytics.async = true
+        analytics.src =
+          'https://www.googletagmanager.com/gtag/js?id=G-SRVS9XNT7N'
+
+        document.head.append(config, analytics)
+      }, 2000)
     })
   }
 }
