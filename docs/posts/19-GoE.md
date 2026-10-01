@@ -11,11 +11,15 @@ prev: false
 next: false
 
 tags:
+  - post2026
   - appdev
   - webdev
 ---
 
 # チャットの誤送信を撲滅するツール
+
+[<Badge type="tag" text="アプリ開発" />](../tags/appdev)
+[<Badge type="tag" text="Web開発" />](../tags/webdev)
 
 ## はじめに
 
