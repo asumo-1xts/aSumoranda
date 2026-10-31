@@ -70,8 +70,10 @@ const CustomTheme: ThemeConfig = {
     ctx.app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
   },
   setup() {
+    const { frontmatter } = useData()
     const route = useRoute()
     imageViewer(route)
+    codeblocksFold({ route, frontmatter })
 
     onMounted(() => {
       window.setTimeout(() => {
