@@ -43,10 +43,12 @@ function loadAnalytics() {
     dataLayer: unknown[]
     gtag: (...args: unknown[]) => void
   }
+
   windowWithAnalytics.dataLayer = windowWithAnalytics.dataLayer || []
   windowWithAnalytics.gtag = (...args) => {
     windowWithAnalytics.dataLayer.push(args)
   }
+
   windowWithAnalytics.gtag('js', new Date())
   windowWithAnalytics.gtag('config', analyticsId, {
     page_path: `${location.pathname}${location.search}${location.hash}`
@@ -56,46 +58,36 @@ function loadAnalytics() {
   script.id = scriptId
   script.async = true
   script.src = `https://www.googletagmanager.com/gtag/js?id=${analyticsId}`
+
   document.head.appendChild(script)
 }
 
 const CustomTheme: ThemeConfig = {
   extends: DefaultTheme,
-  Layout: () => {
-    return h(DefaultTheme.Layout, null, {
+
+  Layout: () =>
+    h(DefaultTheme.Layout, null, {
       'layout-top': () => h(NolebaseHighlightTargetedHeading),
       'not-found': () => h(Custom404)
-    })
+    }),
+
+  enhanceApp: ({ app }) => {
+    app.component('vImageViewer', vImageViewer)
+    app.component('ImageGroup', ImageGroup)
+    app.component('CustomFeature', CustomFeature)
+    app.component('CustomBadge', CustomBadge)
+    app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
   },
-  enhanceApp: (ctx) => {
-    ctx.app.component('vImageViewer', vImageViewer)
-    ctx.app.component('ImageGroup', ImageGroup)
-    ctx.app.component('CustomFeature', CustomFeature)
-    ctx.app.component('CustomBadge', CustomBadge)
-    ctx.app.component('NolebaseUnlazyImg', NolebaseUnlazyImg)
-  },
+
   setup() {
     const { frontmatter } = useData()
     const route = useRoute()
+
     imageViewer(route)
     codeblocksFold({ route, frontmatter })
 
     onMounted(() => {
-      window.setTimeout(() => {
-        if (document.getElementById('google-analytics')) return
-
-        const config = document.createElement('script')
-        config.text =
-          "window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-SRVS9XNT7N')"
-
-        const analytics = document.createElement('script')
-        analytics.id = 'google-analytics'
-        analytics.async = true
-        analytics.src =
-          'https://www.googletagmanager.com/gtag/js?id=G-SRVS9XNT7N'
-
-        document.head.append(config, analytics)
-      }, 2000)
+      window.setTimeout(loadAnalytics, 2000)
     })
   }
 }
