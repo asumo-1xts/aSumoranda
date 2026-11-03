@@ -32,6 +32,6 @@
   background-color: #f7a1a339;
 }
 
-.vitepress-linkcards-container:hover {
+.vitepress-plugin-linkcards-container:hover {
   border-color: var(--vp-c-brand-1) !important;
 }

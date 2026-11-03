@@ -10,8 +10,8 @@ import {
   groupIconMdPlugin,
   groupIconVitePlugin
 } from 'vitepress-plugin-group-icons'
-import { linkToCardPlugin } from 'vitepress-linkcards'
-import type { LinkToCardPluginOptions } from 'vitepress-linkcards'
+import { linkToCardPlugin } from 'vitepress-plugin-linkcards'
+import type { LinkToCardPluginOptions } from 'vitepress-plugin-linkcards'
 import footnote from 'markdown-it-footnote'
 
 import { ThumbnailHashImages } from '@nolebase/vitepress-plugin-thumbnail-hash/vite'

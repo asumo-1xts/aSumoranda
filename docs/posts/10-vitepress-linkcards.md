@@ -21,17 +21,13 @@ tags:
 [<Badge type="tag" text="Web開発" />](../tags/webdev)
 [<Badge type="tag" text="JS/TS" />](../tags/jsts)
 
-::: info
-二段階認証が上手くいかなくなってnpmjsから締め出されてしまい、`vitepress-linkcard`を更新できなくなりました。仕方なく`vitepress-linkcards`に移行し、それに合わせて本記事も更新しました。
-:::
-
 ## はじめに
 
 VitePress用のリンクカード生成プラグインをリリースしたので簡単に紹介します。
 
 [GitHub](@:https://github.com/asumo-1xts/vitepress-linkcards)
 
-リンクカードはこんな感じ↑です。v2になってホバーアニメーションが実装されました！後述しますが、カードの枠線や背景の色はオプションで自由に設定できます。
+リンクカードはこんな感じ↑です。後述しますが、カードの枠線や背景の色はオプションで自由に設定できます。
 
 なお、このプラグインは[markdown-it-link-to-card](https://github.com/luckrya/markdown-it-link-to-card '@luckrya/markdown-it-link-to-card')をフォークして作られました。
 
@@ -42,15 +38,15 @@ VitePress用のリンクカード生成プラグインをリリースしたの�
 ::: code-group
 
 ```sh [npm]
-npm install -D vitepress-linkcards
+npm install -D vitepress-plugin-linkcards
 ```
 
 ```sh [yarn]
-yarn add -D vitepress-linkcards
+yarn add -D vitepress-plugin-linkcards
 ```
 
 ```sh [pnpm]
-pnpm add -D vitepress-linkcards
+pnpm add -D vitepress-plugin-linkcards
 ```
 
 :::
@@ -61,8 +57,8 @@ pnpm add -D vitepress-linkcards
 
 ```ts [docs/.vitepress/config.ts]
 import { defineConfig } from 'vitepress'
-import { linkToCardPlugin } from 'vitepress-linkcards'
-import type { LinkToCardPluginOptions } from 'vitepress-linkcards'
+import { linkToCardPlugin } from 'vitepress-plugin-linkcards'
+import type { LinkToCardPluginOptions } from 'vitepress-plugin-linkcards'
 
 export default defineConfig({
   // ...
@@ -116,12 +112,12 @@ URLに`@:`のプレフィクスを付けるとリンクカードが生成され�
 ```css [docs/.vitepress/theme/custom.css]
 /* homeレイアウトの"Features"に似せた設定 */
 
-.vitepress-linkcards-container {
+.vitepress-plugin-linkcards-container {
   border-color: #00000000 !important;
   background-color: var(--vp-c-bg-soft) !important;
 }
 
-.vitepress-linkcards-container:hover {
+.vitepress-plugin-linkcards-container:hover {
   border-color: var(--vp-c-brand-1) !important;
   background-color: var(--vp-c-bg-soft) !important;
 }

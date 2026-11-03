@@ -1631,10 +1631,10 @@ __metadata:
     oxfmt: "npm:^0.75.0"
     sitemap: "npm:^10.0.0"
     vitepress: "npm:^1.6.4"
-    vitepress-linkcards: "npm:^3.4.1"
     vitepress-plugin-codeblocks-fold: "npm:^1.2.35"
     vitepress-plugin-group-icons: "npm:^1.8.1"
     vitepress-plugin-image-viewer: "npm:^1.1.6"
+    vitepress-plugin-linkcards: "npm:^1.0.0"
     vitepress-sidebar: "npm:^1.41.0"
     vue: "npm:^3.5.44"
   languageName: unknown
@@ -3744,13 +3744,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vitepress-linkcards@npm:^3.4.1":
-  version: 3.4.1
-  resolution: "vitepress-linkcards@npm:3.4.1"
-  checksum: 10c0/2785de7346eef8736e6ebc3e01cc61f8250294ef89dcd562d32e1bc936bf1af1422329b39aa0e4ac8cb058f8aef01b692330e88c0c675082fa676468d16095a5
-  languageName: node
-  linkType: hard
-
 "vitepress-plugin-codeblocks-fold@npm:^1.2.35":
   version: 1.2.35
   resolution: "vitepress-plugin-codeblocks-fold@npm:1.2.35"
@@ -3780,6 +3773,13 @@ __metadata:
   dependencies:
     viewerjs: "npm:^1.11.6"
   checksum: 10c0/c30bb0e0e79f20cf90096850024e5d53daf4c7612430465e4c336200a167e976d227f7a5d03df7d296e92b01719fc6dc36ff4174270fd31a8ddc671fed409b98
+  languageName: node
+  linkType: hard
+
+"vitepress-plugin-linkcards@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "vitepress-plugin-linkcards@npm:1.0.0"
+  checksum: 10c0/373d74dc8ab567347102f9c7e5dc441daafc88f5d46b57eba3f3c4d81fa761267fa79e679cc7550d51f7d9b8442f6327c2c0498c07795de53a4aa9fc0dccf30f
   languageName: node
   linkType: hard
 
