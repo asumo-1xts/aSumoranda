@@ -20,3 +20,5 @@ node_modules/
 PAT.txt
 
 .vscode/
+
+__pycache__/
