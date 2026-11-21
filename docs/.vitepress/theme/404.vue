@@ -1,5 +1,5 @@
 <script setup>
-import DefaultTheme from 'vitepress/theme'
+import DefaultTheme from 'vitepress/theme-without-fonts'
 const { Layout } = DefaultTheme
 </script>
 
