@@ -247,7 +247,9 @@ export default defineConfigWithTheme({
     ]
   ],
 
-  transformHead({ assets, pageData, head }) {
+  transformHead({ assets, page, pageData, head }) {
+    const additionalHead: [string, Record<string, string>][] = []
+
     // 初期表示で使う本文用フォントだけを先読みする
     const FontFile = assets.find((file) =>
       /GenInterfaceJP-Regular\.\w+\.woff2$/.test(file)
@@ -257,7 +259,7 @@ export default defineConfigWithTheme({
         tag === 'link' && attrs?.rel === 'preload' && attrs.href === FontFile
     )
     if (FontFile && !hasFontPreload) {
-      head.push([
+      additionalHead.push([
         'link',
         {
           rel: 'preload',
@@ -269,41 +271,54 @@ export default defineConfigWithTheme({
       ])
     }
 
+    if (page === 'index.md') {
+      additionalHead.push([
+        'link',
+        {
+          rel: 'preload',
+          href: '/cover.webp',
+          as: 'image',
+          type: 'image/webp',
+          fetchpriority: 'high'
+        }
+      ])
+    }
+
     // 動的なメタタグの設定
     const title = pageData.frontmatter.title || 'aSumoranda'
     const description = pageData.frontmatter.description || 'ｱｽﾓﾗﾝﾀﾞ'
     const author = pageData.frontmatter.author || 'aSumo'
     const url = pageData.frontmatter.permalink || 'https://blog.asumo.dev/'
     const canonicalUrl = url
-    head.push([
+    additionalHead.push([
       'meta',
       {
         property: 'og:title',
         content: title
       }
     ])
-    head.push([
+    additionalHead.push([
       'meta',
       {
         property: 'og:description',
         content: description
       }
     ])
-    head.push([
+    additionalHead.push([
       'meta',
       {
         property: 'og:author',
         content: author
       }
     ])
-    head.push([
+    additionalHead.push([
       'meta',
       {
         property: 'og:url',
         content: url
       }
     ])
-    head.push([
+    additionalHead.push([
       'link',
       {
         rel: 'canonical',
@@ -311,8 +326,14 @@ export default defineConfigWithTheme({
       }
     ])
 
-    // まとめて返す
-    return head
+    return additionalHead
+  },
+
+  transformHtml(html) {
+    return html.replace(
+      '<link rel="preload stylesheet" href="/vp-icons.css" as="style">',
+      '<link rel="stylesheet" href="/vp-icons.css" media="print" onload="this.media=\'all\'">'
+    )
   }
 })
 

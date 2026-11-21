@@ -6,7 +6,6 @@ import type { Theme as ThemeConfig } from 'vitepress'
 // VitePress plugins
 import codeblocksFold from 'vitepress-plugin-codeblocks-fold'
 import imageViewer from 'vitepress-plugin-image-viewer'
-import vImageViewer from 'vitepress-plugin-image-viewer/lib/vImageViewer.vue'
 
 // Nolebase plugins
 import { NolebaseHighlightTargetedHeading } from '@nolebase/vitepress-plugin-highlight-targeted-heading/client'
@@ -29,9 +28,6 @@ import '@nolebase/vitepress-plugin-thumbnail-hash/client/style.css'
 import '@nolebase/vitepress-plugin-enhanced-mark/client/style.css'
 
 import '@miletorix/vitepress-image-group/style.css'
-import 'viewerjs/dist/viewer.min.css'
-import 'vitepress-plugin-codeblocks-fold/style/index.css'
-import 'virtual:group-icons.css'
 
 const analyticsId = 'G-SRVS9XNT7N'
 
@@ -72,7 +68,6 @@ const CustomTheme: ThemeConfig = {
     }),
 
   enhanceApp: ({ app }) => {
-    app.component('vImageViewer', vImageViewer)
     app.component('ImageGroup', ImageGroup)
     app.component('CustomFeature', CustomFeature)
     app.component('CustomBadge', CustomBadge)
@@ -87,6 +82,9 @@ const CustomTheme: ThemeConfig = {
     codeblocksFold({ route, frontmatter })
 
     onMounted(() => {
+      void import('viewerjs/dist/viewer.min.css')
+      void import('vitepress-plugin-codeblocks-fold/style/index.css')
+      void import('virtual:group-icons.css')
       window.setTimeout(loadAnalytics, 2000)
     })
   }
