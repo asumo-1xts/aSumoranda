@@ -2,7 +2,6 @@
   "name": "asumoranda",
   "type": "module",
   "scripts": {
-    "prebuild": "node scripts/subset-fonts.mjs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
